@@ -10,7 +10,10 @@ int main(void)
 
     if(input < UINT_MAX >> 1)
     {
-        raise(SIGSEGV);
+        if(input < UINT_MAX >> 2)
+        {
+            raise(SIGSEGV);
+        }
     }
     return 0;
 }
