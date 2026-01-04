@@ -14,7 +14,10 @@ int main(void)
         {
             if(input < UINT_MAX >> 3)
             {
-                raise(SIGSEGV);
+                if(input < UINT_MAX >> 4)
+                {
+                    raise(SIGSEGV);
+                }
             }
         }
     }
